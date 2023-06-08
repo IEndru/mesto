@@ -1,0 +1,10 @@
+.profile__edit-button {
+  background-image: url("/images/Vector.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  width: 24px;
+  height: 24px;
+  align-self: center;
+}
