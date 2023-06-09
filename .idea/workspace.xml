@@ -3,6 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="12670c41-9e56-482b-8c59-122b6db1b5b3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__add-button/profile__add-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__add-button/profile__add-button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__avatar/profile__avatar.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__avatar/profile__avatar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__edit-button/profile__edit-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__edit-button/profile__edit-button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Vector.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/fonts/Inter-Bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/fonts/Inter-Bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/fonts/inter.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/fonts/inter.css" afterDir="false" />
+>>>>>>> d42756acb010ac467122da171ebda15747419089
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +61,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1686076536077</updated>
+<<<<<<< HEAD
+      <workItem from="1686076537361" duration="25807000" />
+=======
       <workItem from="1686076537361" duration="16574000" />
       <workItem from="1686224171222" duration="58000" />
+<<<<<<< HEAD
       <workItem from="1686224232249" duration="4910000" />
+=======
+      <workItem from="1686224232249" duration="3471000" />
+>>>>>>> 45fcd5616fdfa48b7f575309d87f39055991a5cf
+>>>>>>> d42756acb010ac467122da171ebda15747419089
     </task>
     <servers />
   </component>
