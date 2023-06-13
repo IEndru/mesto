@@ -7,28 +7,18 @@
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   display: flex;
-  justify-content: space-between;
-  max-width:1184px;
+  max-width:880px;
   margin: 0 auto;
-  padding-bottom: 24px;
+  padding: 0;
+  width: calc(100% - 400px);
 }
 
-@media screen and (max-width: 1279px) {
-  .footer {
-    max-width: 928px;
-  }
-}
+
 
 @media screen and (max-width: 1023px) {
   .footer {
-    max-width: 720px;
+    min-width: 282px;
+    width: calc(100% - 200px);
   }
 }
 
-@media screen and (max-width: 767px) {
-  .footer {
-    max-width: 186px;
-    flex-direction: column;
-    margin-left: 16px;
-  }
-}

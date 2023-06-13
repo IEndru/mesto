@@ -1,6 +1,6 @@
 .elements {
   max-width: 880px;
-  margin:47.25px auto 0;
+  margin:51px auto 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inter', Arial, sans-serif;
@@ -11,19 +11,20 @@
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+  grid-template-columns: repeat(auto-fit, 282px);
   grid-column-gap: 17px;
   grid-row-gap: 20px;
 }
 
 @media screen and (max-width: 1023px) {
   .elements {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 auto;
+    margin: 36px auto 0;
+    padding: 0 10px;
+    justify-content: center;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 620px) {
   .elements {
     display: flex;
     flex-direction: column;

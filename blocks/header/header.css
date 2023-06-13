@@ -13,6 +13,12 @@
   text-rendering: optimizeLegibility;
 }
 
+@media screen and (max-width: 767px) {
+  .header {
+    padding-top: 28px;
+  }
+}
+
 /*@media screen and (max-width: 1279px) {
   .header {
     max-width: 928px;
