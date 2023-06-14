@@ -8,86 +8,86 @@
     <meta name="author" content="Зверев Андрей">
     <link rel="stylesheet" href="pages/index.css">
     <title>Место</title>
-  <script src="/index.js" defer></script>
+    <script src="pages/index.js" defer></script>
 </head>
 <body>
   <div class="page">
-      <header class="header">
-        <img src="images/logo/header-logo.svg" class="header__logo" alt="Место">
+    <header class="header">
+      <img src="images/logo/header-logo.svg" class="header__logo" alt="Место">
         <hr class="header__line">
-      </header>
-      <main class="content">
-        <section class="profile">
-          <div class="profile__block">
-            <img src="images/avatar.svg" class="profile__avatar" alt="Фото Жак-Ив Кусто">
-            <div class="profile__info">
-              <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button class="profile__edit-button"></button>
-              <p class="profile__subtitle">Исследователь океана</p>
-            </div>
+    </header>
+    <main class="content">
+      <section class="profile">
+        <div class="profile__block">
+          <img src="images/avatar.svg" class="profile__avatar" alt="Фото аватара">
+          <div class="profile__info">
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <button type="button" class="profile__edit-button link-transparency"></button>
+            <p class="profile__subtitle">Исследователь океана</p>
           </div>
-          <button class="profile__add-button"></button>
-        </section>
-        <section class="elements">
-          <div class="elements__card">
-            <img class="elements__img" src="./images/old-church.jpg" alt="">
-            <div class="elements__text">
-              <h2 class="elements__title">Карачаевск</h2>
-              <button class="elements__heart"></button>
-             </div>
+        </div>
+        <button class="profile__add-button link-transparency"></button>
+      </section>
+      <section class="elements">
+        <div class="elements__card">
+          <img class="elements__img" src="./images/old-church.jpg" alt="">
+          <div class="elements__text">
+            <h2 class="elements__title">Карачаевск</h2>
+            <button type="button" class="elements__heart link-transparency"></button>
           </div>
-          <div class="elements__card">
-            <img class="elements__img" src="./images/Elbrus.jpg" alt="#">
-            <div class="elements__text">
-              <h2 class="elements__title">Гора Эльбрус</h2>
-              <button class="elements__heart"></button>
-            </div>
+        </div>
+        <div class="elements__card">
+          <img class="elements__img" src="./images/Elbrus.jpg" alt="#">
+          <div class="elements__text">
+            <h2 class="elements__title">Гора Эльбрус</h2>
+            <button type="button" class="elements__heart link-transparency"></button>
           </div>
-          <div class="elements__card">
-            <img class="elements__img" src="./images/Dombay-Ski-Complex.jpg" alt="#">
-            <div class="elements__text">
-              <h2 class="elements__title">Домбай</h2>
-              <button class="elements__heart"></button>
-            </div>
+        </div>
+        <div class="elements__card">
+          <img class="elements__img" src="./images/Dombay-Ski-Complex.jpg" alt="#">
+          <div class="elements__text">
+            <h2 class="elements__title">Домбай</h2>
+            <button type="button" class="elements__heart link-transparency"></button>
           </div>
-          <div class="elements__card">
-            <img class="elements__img" src="./images/Elbrus.jpg" alt="#">
-            <div class="elements__text">
-              <h2 class="elements__title">Гора Эльбрус</h2>
-              <button class="elements__heart"></button>
-            </div>
+        </div>
+        <div class="elements__card">
+          <img class="elements__img" src="./images/Elbrus.jpg" alt="#">
+          <div class="elements__text">
+            <h2 class="elements__title">Гора Эльбрус</h2>
+            <button type="button" class="elements__heart link-transparency"></button>
           </div>
-          <div class="elements__card">
-            <img class="elements__img" src="./images/Dombay-Ski-Complex.jpg" alt="#">
-            <div class="elements__text">
-              <h2 class="elements__title">Домбай</h2>
-              <button class="elements__heart"></button>
-            </div>
+        </div>
+        <div class="elements__card">
+          <img class="elements__img" src="./images/Dombay-Ski-Complex.jpg" alt="#">
+          <div class="elements__text">
+            <h2 class="elements__title">Домбай</h2>
+            <button type="button" class="elements__heart link-transparency"></button>
           </div>
-          <div class="elements__card">
-            <img class="elements__img" src="./images/old-church.jpg" alt="#">
-            <div class="elements__text">
-              <h2 class="elements__title">Карачаевск</h2>
-              <button class="elements__heart"></button>
-            </div>
+        </div>
+        <div class="elements__card">
+          <img class="elements__img" src="./images/old-church.jpg" alt="#">
+          <div class="elements__text">
+            <h2 class="elements__title">Карачаевск</h2>
+            <button type="button" class="elements__heart link-transparency"></button>
           </div>
-        </section>
-        <section class="popup popup_opened">
-          <div class="popup__container">
-            <button class="popup__close-button" type="button"></button>
-            <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form" action="#" name="">
-              <label>
-                <input type="text" class="popup__input-user" name="user" value="Жак-Ив Кусто" placeholder="Введите ваше имя">
-              </label>
-              <label>
-                <input type="text" class="popup__input-specialization" name="specialization" value="Исследователь океана" placeholder="Введите вашу специальность">
-              </label>
-              <button type="submit" class="popup__submit">Сохранить</button>
-            </form>
-          </div>
-        </section>
-      </main>
+        </div>
+      </section>
+      <section class="popup">
+        <div class="popup__container">
+          <button class="popup__close-button link-transparency" type="button"></button>
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <form class="popup__form" action="#" name="edit-avatar">
+            <label>
+              <input type="text" class="popup__input-user" name="user" value="Жак-Ив Кусто" placeholder="Введите ваше имя">
+            </label>
+            <label>
+              <input type="text" class="popup__input-specialization" name="specialization" value="Исследователь океана" placeholder="Введите вашу специальность">
+            </label>
+            <button type="submit" class="popup__submit">Сохранить</button>
+          </form>
+        </div>
+      </section>
+    </main>
     <footer class="footer">
       <p class="footer__copyright">© 2023 Mesto Russia</p>
     </footer>
