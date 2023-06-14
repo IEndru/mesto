@@ -38,6 +38,5 @@
 @import url(../blocks/popup/__input-user/popup__input-user.css);
 @import url(../blocks/popup/popup__title/popup__title.css);
 @import url(../blocks/popup/popup__submit/popup__submit.css);
-@import url(../blocks/popup/__input-line/popup__input-line.css);
 
 /* {outline: 1px solid yellow}
