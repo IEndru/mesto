@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 24px;
   grid-template-rows: auto;
   grid-gap: 16px 18px;
-  min-width: 336px;
+  width: 336px;
   align-self: center;
 }
 
@@ -11,7 +11,7 @@
   .profile__info {
     grid-template-columns: 1fr 18px;
     grid-gap: 14px 10px;
-    min-width: 217px;
+    width: 217px;
     margin-top: 26px;
   }
 }

@@ -19,6 +19,11 @@
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   height: 50px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.popup__submit:hover {
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 620px) {
