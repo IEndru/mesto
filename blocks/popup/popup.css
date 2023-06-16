@@ -4,10 +4,11 @@
   right: 0;
   bottom: 0;
   left: 0;
-  display: none;
-  width: 430px;
-  height: 330px;
-  margin: 195px auto 0;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
   font-family: 'Inter', Arial, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -15,13 +16,10 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (max-width: 620px) {
   .popup {
-    width: 282px;
-    height: 322px;
-    margin: 123px auto 0;
+
   }
 }

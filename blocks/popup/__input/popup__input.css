@@ -1,10 +1,10 @@
-.popup__input-user {
+.popup__input {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.2;
-  margin: 54px 0 0;
   border: none;
+  width: 100%;
   font-family: 'Inter', Arial, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -12,15 +12,7 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
-  padding: 0 0 12px 0;
   border-bottom: 1px solid rgba(0,0,0,.2);
-  height: 14px;
   vertical-align: top;
-  width: 100%;
-}
-
-@media screen and (max-width: 620px) {
-  .popup__input-user {
-    margin: 75px 0 0;
-  }
+  padding: 0 0 12px 0;
 }

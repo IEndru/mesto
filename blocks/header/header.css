@@ -4,7 +4,6 @@
   max-width: 880px;
   margin: 0 auto 40px;
   padding-top: 45px;
-  box-sizing: border-box;
   font-family: 'Inter', Arial, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -18,6 +17,7 @@
 @media screen and (max-width: 767px) {
   .header {
     padding-top: 28px;
+    margin: 0 auto 42px;
   }
 }
 
