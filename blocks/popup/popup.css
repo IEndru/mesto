@@ -16,10 +16,7 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
+  opacity: 0;
+  transition: visibility .2s linear 0s, opacity .4s linear 0s;
 }
 
-@media screen and (max-width: 620px) {
-  .popup {
-
-  }
-}

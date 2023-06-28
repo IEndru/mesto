@@ -7,7 +7,9 @@
     <meta name="keywords" content="Место">
     <meta name="author" content="Зверев Андрей">
     <link rel="stylesheet" href="pages/index.css">
+    <link rel="stylesheet" href="pages/index.css">
     <title>Место</title>
+    <script src="scripts/content.js" defer></script>
     <script src="scripts/index.js" defer></script>
 </head>
 <body>
@@ -28,62 +30,52 @@
         <button  type="button" class="profile__add-button"></button>
       </section>
       <section class="elements">
-        <div class="elements__card">
-          <img class="elements__img" src="./images/old-church.jpg" alt="Церковь">
-          <div class="elements__text">
-            <h2 class="elements__title">Карачаевск</h2>
-            <button type="button" class="elements__heart link-transparency"></button>
+        <template id="card-template">
+          <div class="elements__card">
+            <button class="elements__delete-button" type="button"></button>
+            <img class="elements__img" src="" alt="">
+              <div class="elements__text">
+                <h2 class="elements__title"></h2>
+                <button type="button" class="elements__heart link-transparency"></button>
+              </div>
           </div>
-        </div>
-        <div class="elements__card">
-          <img class="elements__img" src="./images/Elbrus.jpg" alt="Гора эльбрус">
-          <div class="elements__text">
-            <h2 class="elements__title">Гора Эльбрус</h2>
-            <button type="button" class="elements__heart link-transparency elements__heart_active"></button>
-          </div>
-        </div>
-        <div class="elements__card">
-          <img class="elements__img" src="./images/Dombay-Ski-Complex.jpg" alt="Домбай">
-          <div class="elements__text">
-            <h2 class="elements__title">Домбай</h2>
-            <button type="button" class="elements__heart link-transparency"></button>
-          </div>
-        </div>
-        <div class="elements__card">
-          <img class="elements__img" src="./images/Elbrus.jpg" alt="Гора Эльбрус">
-          <div class="elements__text">
-            <h2 class="elements__title">Гора Эльбрус</h2>
-            <button type="button" class="elements__heart link-transparency"></button>
-          </div>
-        </div>
-        <div class="elements__card">
-          <img class="elements__img" src="./images/Dombay-Ski-Complex.jpg" alt="Домбай">
-          <div class="elements__text">
-            <h2 class="elements__title">Домбай</h2>
-            <button type="button" class="elements__heart link-transparency"></button>
-          </div>
-        </div>
-        <div class="elements__card">
-          <img class="elements__img" src="./images/old-church.jpg" alt="Церковь">
-          <div class="elements__text">
-            <h2 class="elements__title">Карачаевск</h2>
-            <button type="button" class="elements__heart link-transparency"></button>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <p class="footer__copyright" lang="en">© 2023 Mesto Russia</p>
-    </footer>
-    <section class="popup">
+        </template>
+       </section>
+     </main>
+     <footer class="footer">
+       <p class="footer__copyright" lang="en">© 2023 Mesto Russia</p>
+     </footer>
+     <!-- popup изменение профиля-->
+    <section class="popup popup_type_profile-edit">
+    <div class="popup__container">
+      <button class="popup__close-button" type="button"></button>
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <form class="popup__form" action="#" name="editavatar">
+        <input type="text" class="popup__input popup__input_type_name" name="user" value="Жак-Ив Кусто" placeholder="Введите ваше имя">
+        <input type="text" class="popup__input popup__input_type_specialization" name="specialization" value="Исследователь океана" placeholder="Введите вашу специальность">
+        <button type="submit" class="popup__submit">Сохранить</button>
+      </form>
+    </div>
+  </section>
+    <!--popap добавление карточек-->
+    <section class="popup popup_type_card-add">
       <div class="popup__container">
         <button class="popup__close-button" type="button"></button>
-        <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form" action="#" name="edit-avatar">
-          <input type="text" class="popup__input popup__input_type_name" name="user" value="Жак-Ив Кусто" placeholder="Введите ваше имя">
-          <input type="text" class="popup__input popup__input_type_specialization" name="specialization" value="Исследователь океана" placeholder="Введите вашу специальность">
-          <button type="submit" class="popup__submit">Сохранить</button>
+        <h2 class="popup__title">Новое место</h2>
+        <form class="popup__form" action="#" name="addCards">
+          <input type="text" class="popup__input popup__input_type_name" name="user" placeholder="Название">
+          <input type="text" class="popup__input popup__input_type_link" name="specialization" placeholder="Ссылка на картинку">
+          <button type="submit" class="popup__submit">Создать</button>
         </form>
+      </div>
+    </section>
+    <section class="popup popup_type_image">
+      <div class="popup__content">
+          <figure class="popup__image-wrap">
+            <img class="popup__image" src="" alt="">
+            <figcaption class="popup__image-caption"></figcaption>
+            <button class="popup__close-button"></button>
+          </figure>
       </div>
     </section>
   </div>

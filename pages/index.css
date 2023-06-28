@@ -22,6 +22,7 @@
 @import url(../blocks/elements/__heart/elements__heart.css);
 @import url(../blocks/elements/__heart/_active/elements__heart_active.css);
 @import url(../blocks/elements/__img/elements__img.css);
+@import url(../blocks/elements/__delete-button/elements__delete-button.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
@@ -38,3 +39,11 @@
 @import url(../blocks/popup/__input/_type_name/popup__input_type_name.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__submit/popup__submit.css);
+@import url(../blocks/popup/__content/popup__content.css);
+@import url(../blocks/popup/__image-caption/popup__image-caption.css);
+@import url(../blocks/popup/__image/popup__image.css);
+@import url(../blocks/popup/__image-wrap/popup__image-wrap.css);
+@import url(../blocks/popup/__input/__input_type_link/popup__input_type_link.css);
+.popup__input_type_link
+
+/* {outline: 1px solid yellow};*/
