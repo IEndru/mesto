@@ -1,6 +1,6 @@
 const editButtonElement = document.querySelector('.profile__edit-button');
 const closeButtonEditElement = document.querySelector('.popup__close-button_type_edit');
-const popupElement = document.querySelector('.popup_type_profile-edit');
+const popupElementEdit = document.querySelector('.popup_type_profile-edit');
 const formEditElement = document.querySelector('.popup__form_type_edit');
 const nameInput = formEditElement.querySelector('.popup__input_type_name');
 const jobInput = formEditElement.querySelector('.popup__input_type_specialization');
@@ -15,25 +15,25 @@ function closePopup(popup) {
   popup.classList.remove('popup_opened');
 }
 
-function editFormAvatar(evt) {
+function editFormProfile(evt) {
   evt.preventDefault();
   console.log(evt)
   profileNameElement.textContent = nameInput.value;
   profileJobElement.textContent = jobInput.value;
-  closePopup(popupElement);
+  closePopup(popupElementEdit);
 }
 
 editButtonElement.addEventListener('click', function() {
-  openPopup(popupElement);
+  openPopup(popupElementEdit);
   nameInput.value = profileNameElement.textContent;
   jobInput.value = profileJobElement.textContent;
 });
 
 closeButtonEditElement.addEventListener('click', function() {
-  closePopup(popupElement);
+  closePopup(popupElementEdit);
 });
 
-formEditElement.addEventListener('submit', editFormAvatar);
+formEditElement.addEventListener('submit', editFormProfile);
 
 // Открытие и закрытие popup с фото
 const profileAddButton = document.querySelector('.profile__add-button');
@@ -113,7 +113,6 @@ const popupContent = popupImage.querySelector('.popup__image-wrap');
 const closeButtonFullImage = popupContent.querySelector('.popup__close-button_type_full-image');
 const popupElementImage = popupContent.querySelector('.popup__image');
 const popupElementContent = popupContent.querySelector('.popup__image-caption');
-const cardImage = document.querySelectorAll('.elements__img');
 
 function openFullScreenImage(name, link) {
   popupElementImage.src = link;
@@ -121,14 +120,6 @@ function openFullScreenImage(name, link) {
   popupElementContent.textContent = name;
   openPopup(popupImage);
 }
-
-cardImage.forEach(function(fullScreen) {
-  const name = fullScreen.alt;
-  const link = fullScreen.src;
-  fullScreen.addEventListener('click', function() {
-    openFullScreenImage(name, link);
-  });
-});
 
 closeButtonFullImage.addEventListener('click', function() {
   closePopup(popupImage);
