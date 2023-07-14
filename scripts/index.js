@@ -9,15 +9,38 @@ const profileJobElement = document.querySelector('.profile__subtitle');
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupUseEsc);
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupUseEsc);
 }
+
+function closePopupUseEsc(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened');
+    if (openedPopup) {
+      closePopup(openedPopup);
+    }
+  }
+}
+
+//закрытие попапов кликом на оверлей
+const popupElements = document.querySelectorAll('.popup');
+popupElements.forEach(function(popup) {
+  popup.addEventListener('click', function(event) {
+    if (event.target === popup) {
+      const openedPopup = document.querySelector('.popup_opened');
+      if (openedPopup) {
+        closePopup(openedPopup);
+      }
+    }
+  });
+});
 
 function editFormProfile(evt) {
   evt.preventDefault();
-  console.log(evt)
   profileNameElement.textContent = nameInput.value;
   profileJobElement.textContent = jobInput.value;
   closePopup(popupElementEdit);
