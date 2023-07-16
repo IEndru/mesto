@@ -29,7 +29,7 @@ function closePopupUseEsc(evt) {
 //закрытие попапов кликом на оверлей
 const popupElements = document.querySelectorAll('.popup');
 popupElements.forEach(function(popup) {
-  popup.addEventListener('click', function(event) {
+  popup.addEventListener('mousedown', function(event) {
     if (event.target === popup) {
       const openedPopup = document.querySelector('.popup_opened');
       if (openedPopup) {
@@ -94,7 +94,6 @@ function addCards(evt) {
   const link = linkInputAddCard.value;
   const cardElement = createCard(name, link);
   elementsContainer.prepend(cardElement);
-
   closePopup(popupAddCards);
   addFormElement.reset();
 }
@@ -120,7 +119,9 @@ function useInitialCards() {
 }
 
 profileAddButton.addEventListener('click', function() {
+  const submitButton = addFormElement.querySelector('.popup__submit');
   openPopup(popupAddCards);
+  disableButton(submitButton);
 });
 
 closeButtonAddCards.addEventListener('click', function() {
