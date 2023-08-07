@@ -36,13 +36,13 @@ class FormValidator {
   };
 
 
-  // Функция для отключения кнопки
+  // Функция для деактивации кнопки
   disableButton() {
     this._submitButton.classList.add(this._inactiveButtonClass);
     this._submitButton.disabled = true;
   }
 
-  // Функция для включения кнопки
+  // Функция для активации кнопки
   _enableButton() {
     this._submitButton.classList.remove(this._inactiveButtonClass);
     this._submitButton.disabled = false;
@@ -71,7 +71,7 @@ class FormValidator {
     this._toggleButtonState(this._inputList, this._submitButton);
   }
 
-  //включает валидацию формы
+  //включаем валидацию формы
   enableValidation () {
     const formList = Array.from(this._formElement);
     formList.forEach((formElement) => {

@@ -22,6 +22,8 @@
 * Grid Layout;
 * Media queries;
 * JavaScript
+* ООП
+* Модули
 
 
 ## Установка и запуск проекта
