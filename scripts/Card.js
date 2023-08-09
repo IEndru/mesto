@@ -49,9 +49,11 @@ class Card {
     this._element = this._getTemplate();
     this._setData();
     this._setListeners();
-
     return this._element;
   }
 }
 
 export default Card;
+
+
+

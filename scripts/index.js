@@ -1,30 +1,18 @@
-import { initialCards } from "./content.js";
+import { initialCards, validationConfig } from './constants.js';
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 
-// Конфигурация валидации формы
-const validationConfig = {
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__submit',
-  inactiveButtonClass: 'popup__submit_inactive',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__input-error_active',
-};
-let addCardForm;
+const popupAddCardsForm = document.querySelector('.popup_type_card-add');
+const addCardFormElement = popupAddCardsForm.querySelector('.popup__form_type_card-add');
+const addCardForm = new FormValidator(validationConfig, addCardFormElement);
+addCardForm.enableValidation();
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Инициализация валидации для попапа "Добавить карточку"
-  const popupAddCardsForm = document.querySelector('.popup_type_card-add');
-  const addCardFormElement = popupAddCardsForm.querySelector('.popup__form_type_card-add');
-  addCardForm = new FormValidator(validationConfig, addCardFormElement);
-  addCardForm.enableValidation();
 
-  // Инициализация валидации для попапа "Редактировать профиль"
-  const popupEditCardsForm = document.querySelector('.popup_type_profile-edit');
-  const editFormElement = popupEditCardsForm.querySelector('.popup__form_type_edit');
-  const editCardForm = new FormValidator(validationConfig, editFormElement);
-  editCardForm.enableValidation();
-});
+const popupEditCardsForm = document.querySelector('.popup_type_profile-edit');
+const editFormElement = popupEditCardsForm.querySelector('.popup__form_type_edit');
+const editCardForm = new FormValidator(validationConfig, editFormElement);
+editCardForm.enableValidation();
+
 
 const editButtonElement = document.querySelector('.profile__edit-button');
 const closeButtonEditElement = document.querySelector('.popup__close-button_type_edit');
@@ -51,9 +39,7 @@ function closePopup(popup) {
 function closePopupUseEsc(evt) {
   if (evt.key === 'Escape') {
     const openedPopup = document.querySelector('.popup_opened');
-    if (openedPopup) {
       closePopup(openedPopup);
-    }
   }
 }
 
@@ -63,9 +49,7 @@ popupElements.forEach(function (popup) {
   popup.addEventListener('mousedown', function (event) {
     if (event.target === popup) {
       const openedPopup = document.querySelector('.popup_opened');
-      if (openedPopup) {
         closePopup(openedPopup);
-      }
     }
   });
 });
@@ -107,10 +91,8 @@ function addCards(evt) {
   evt.preventDefault();
   const name = nameInputAddCard.value;
   const link = linkInputAddCard.value;
-  const cardData = { name, link };
-  const card = new Card(cardData, '#card-template');
-  const cardElement = card.generateCard();
-  addCardToContainer(cardElement);
+  const cardData= {'name': name, 'link':link};
+  createCard (cardData);
   closePopupAddCards();
   addFormElement.reset();
 }
@@ -141,12 +123,17 @@ closeButtonAddCards.addEventListener('click', closePopupAddCards);
 addFormElement.addEventListener('submit', addCards);
 
 // Функция для вывода начальных карточек
+function createCard (data) {
+  const cardData = { name: data.name, link: data.link };
+  const card = new Card(cardData, '#card-template');
+  const cardElement = card.generateCard();
+  addCardToContainer(cardElement);
+  return cardElement;
+}
+
 function useInitialCards() {
-  initialCards.forEach(function (img) {
-    const cardData = { name: img.name, link: img.link };
-    const card = new Card(cardData, '#card-template');
-    const cardElement = card.generateCard();
-    addCardToContainer(cardElement);
+  initialCards.forEach(function (data) {
+    createCard (data);
   });
 }
 
@@ -174,5 +161,4 @@ function closePopupImage() {
 
 // Слушатель на кнопку закрытия полноразмерного изображения
 closeButtonFullImage.addEventListener('click', closePopupImage);
-
 
