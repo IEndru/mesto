@@ -1,10 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="портфолио Зверева Андрея на Яндекс.Практикуме">
+    <meta name="keywords" content="Место">
+    <meta name="author" content="Зверев Андрей">
+    <!-- <link rel="stylesheet" href="pages/index.css">-->
+    <title>Место</title>
+    <!--<script type="module" src="pages/index.js" defer></script>-->
 </head>
 <body>
-$END$
+<div class="page">
+<header class="header">
+  <img src="<%=require('./images/logo/header-logo.svg')%>" class="header__logo" alt="Место">
+</header>
+<main class="content">
+  <section class="profile">
+    <div class="profile__block">
+      <img src="<%=require('./images/avatar.svg')%>" class="profile__avatar" alt="Фото аватара">
+      <div class="profile__info">
+        <h1 class="profile__title">Жак-Ив Кусто</h1>
+        <button type="button" class="profile__edit-button"></button>
+        <p class="profile__subtitle">Исследователь океана</p>
+      </div>
+    </div>
+    <button type="button" class="profile__add-button"></button>
+  </section>
+  <section class="elements">
+
+  </section>
+ </main>
+ <footer class="footer">
+   <p class="footer__copyright" lang="en">© 2023 Mesto Russia</p>
+ </footer>
+    <!-- popup изменение профиля-->
+    <section class="popup popup_type_profile-edit">
+      <div class="popup__container">
+        <button class="popup__close-button popup__close-button_type_edit" type="button"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form class="popup__form popup__form_type_edit" action="#" name="editavatar" novalidate>
+          <label>
+            <input type="text"
+                   class="popup__input popup__input_type_name"
+                   name="user"
+                   id="user-input"
+                   minlength=2
+                   maxlength=40
+                   required
+                   value="Жак-Ив Кусто"
+                   placeholder="Введите ваше имя">
+            <span class="popup__input-error user-input-error"></span>
+          </label>
+          <label>
+            <input type="text"
+                   class="popup__input popup__input_type_specialization"
+                   minlength=2 maxlength=200
+                   required
+                   name="specialization"
+                   id="specialization-input"
+                   value="Исследователь океана"
+                   placeholder="Введите вашу специальность">
+            <span class="popup__input-error specialization-input-error"></span>
+          </label>
+          <button type="submit" class="popup__submit">Сохранить</button>
+        </form>
+      </div>
+    </section>
+    <!--popap добавление карточек-->
+    <section class="popup popup_type_card-add">
+      <div class="popup__container">
+        <button class="popup__close-button popup__close-button_type_card-add" type="button"></button>
+        <h2 class="popup__title">Новое место</h2>
+        <form class="popup__form popup__form_type_card-add" action="#" name="addCards" novalidate>
+          <label>
+            <input type="text"
+                   class="popup__input popup__input_type_name"
+                   name="nameplace"
+                   id="nameplace-input"
+                   minlength=2
+                   maxlength=30
+                   required
+                   placeholder="Название">
+            <span class="popup__input-error nameplace-input-error"></span>
+          </label>
+          <label>
+            <input type="url"
+                   id="urlplace-input"
+                   class="popup__input popup__input_type_link"
+                   name="urlplace"
+                   required
+                   placeholder="Ссылка на картинку">
+            <span class="popup__input-error urlplace-input-error"></span>
+          </label>
+          <button type="submit" class="popup__submit">Создать</button>
+        </form>
+      </div>
+    </section>
+    <section class="popup popup_type_image popup_type_darker">
+      <div class="popup__content">
+          <figure class="popup__image-wrap">
+            <img class="popup__image" src="<%=require('./images/noimage.jpg')%>" alt="нет картинки">
+            <figcaption class="popup__image-caption"></figcaption>
+            <button class="popup__close-button popup__close-button_type_full-image"></button>
+          </figure>
+      </div>
+    </section>
+  </div>
+    <template id="card-template">
+      <div class="elements__card">
+        <button class="elements__delete-button" type="button"></button>
+        <img class="elements__img" src="<%=require('./images/noimage.jpg')%>" alt="нет картинки">
+        <div class="elements__text">
+          <h2 class="elements__title"></h2>
+          <button type="button" class="elements__heart link-transparency"></button>
+        </div>
+      </div>
+    </template>
 </body>
 </html>
