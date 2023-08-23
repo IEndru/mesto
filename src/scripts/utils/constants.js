@@ -57,7 +57,7 @@ export const addFormElement = popupAddCards.querySelector('.popup__form_type_car
 export const closeButtonAddCards = popupAddCards.querySelector('.popup__close-button_type_card-add');
 export const nameInputAddCard = popupAddCards.querySelector('.popup__input_type_name');
 export const linkInputAddCard = popupAddCards.querySelector('.popup__input_type_link');
-export const elementsContainer = document.querySelector('.elements');
+export const cardsContainer = document.querySelector('.elements');
 export const cardTemplate = document.querySelector('#card-template');
 
 // Получение элементов попапа с полноразмерным изображением

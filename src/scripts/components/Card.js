@@ -20,22 +20,20 @@ export default class Card{
     this._cardTitle.textContent = this._name;
   }
 
-  _handleLikeButtonClick(event) {
-    const like = event.target;
-    like.classList.toggle('elements__heart_active');
+  _handleLikeButtonClick() {
+    this._likeButton.classList.toggle('elements__heart_active');
   }
 
   _handleDeleteButtonClick() {
+    //this._element = null;
     this._element.remove();
   }
 
   _setListeners() {
     const deleteButton = this._element.querySelector('.elements__delete-button');
     deleteButton.addEventListener('click', () => this._handleDeleteButtonClick());
-
-    const likeButton = this._element.querySelector('.elements__heart');
-    likeButton.addEventListener('click', this._handleLikeButtonClick.bind(this));//() => this._handleLikeButtonClick());
-
+    this._likeButton = this._element.querySelector('.elements__heart');
+    this._likeButton.addEventListener('click', this._handleLikeButtonClick.bind(this));//() => this._handleLikeButtonClick());
     const cardImage = this._element.querySelector('.elements__img');
     cardImage.addEventListener('click', () => {
       this._handleCardClick(this._name, this._link)});

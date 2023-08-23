@@ -6,10 +6,12 @@ export default class FormValidator {
     this._inactiveButtonClass = config.inactiveButtonClass;
     this._inputErrorClass = config.inputErrorClass;
     this._errorClass = config.errorClass;
+    this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
+    this._submitButton = this._formElement.querySelector(this._submitButtonSelector);
   }
 
 //Функция, которая добавляет класс с ошибкой
-  _showInputError (inputElement, errorMessage) {
+  _showInputError(inputElement, errorMessage) {
     const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.add(this._inputErrorClass);
     errorElement.textContent = errorMessage;
@@ -17,7 +19,7 @@ export default class FormValidator {
   };
 
 //Функция, которая скрывает ошибку в поле ввода
-  _hideInputError(inputElement)  {
+  _hideInputError(inputElement) {
     const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.remove(this._inputErrorClass);
     errorElement.textContent = '';
@@ -25,7 +27,7 @@ export default class FormValidator {
   };
 
 // Функция, которая проверяет валидность поля
-  _checkInputValidity (inputElement){
+  _checkInputValidity(inputElement) {
     if (!inputElement.validity.valid) {
       this._showInputError(inputElement, inputElement.validationMessage);
     } else {
@@ -33,7 +35,7 @@ export default class FormValidator {
     }
   };
 
-  _hasInvalidInput () {
+  _hasInvalidInput() {
     return this._inputList.some((inputElement) => !inputElement.validity.valid);
   };
 
@@ -59,8 +61,6 @@ export default class FormValidator {
   }
 
   _setEventListeners() {
-    this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
-    this._submitButton = this._formElement.querySelector(this._submitButtonSelector);
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
         this._checkInputValidity(inputElement);
@@ -70,13 +70,12 @@ export default class FormValidator {
     this._toggleButtonState();
   }
 
-//включаем валидацию формы
-  enableValidation() {
-    this._formElement.addEventListener('submit', (evt) => {
-      evt.preventDefault();
-    });
-    this._setEventListeners();
-  };
-}
+  //включаем валидацию формы
+    enableValidation() {
+      this._setEventListeners();
+    };
+  }
+
+
 
 
