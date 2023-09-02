@@ -1,5 +1,4 @@
 import Popup from "./Popup";
-import {profileAddButton} from "../utils/constants";
 
 export default class PopupWithForm extends Popup {
   constructor({popup, submitCallback}) {

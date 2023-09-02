@@ -44,7 +44,7 @@ export default class Api {
   }
 
 // Добавление новой карточки
-  getNewCard(data){
+  setNewCard(data){
     return fetch(`${this._url}/cards`, {
       method: 'POST',
       headers: this._headers,

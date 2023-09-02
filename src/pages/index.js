@@ -8,16 +8,8 @@ import PopupWithVerification from '../scripts/components/PopupWithVerification.j
 import PopupWithImage from "../scripts/components/PopupWithImage.js";
 import UserInfo from '../scripts/components/UserInfo.js';
 import Api from '../scripts/components/Api';
-
 import { popupAddCardsForm,addCardFormElement,popupEditCardsForm,editFormElement,popupEditAvatarForm,editAvatarFormElement,deleteCardsPopup,photoAvatar} from '../scripts/utils/constants.js';
-
-import {editAvatarButtonElement, editButtonElement,closeButtonEditElement,popupElementEdit,formEditElement,nameInput,jobInput,profileNameElement,profileJobElement} from '../scripts/utils/constants.js';
-
-import {popupElements} from '../scripts/utils/constants.js';
-
-import {profileAddButton,popupAddCards,addFormElement,closeButtonAddCards,nameInputAddCard,linkInputAddCard,cardsContainer} from '../scripts/utils/constants.js';
-
-import {popupImage,popupContent,closeButtonFullImage,popupElementImage,popupElementContent} from '../scripts/utils/constants.js';
+import {editAvatarButtonElement, editButtonElement,nameInput,jobInput,profileAddButton,popupImage} from '../scripts/utils/constants.js';
 
 const popupWithImage = new PopupWithImage(popupImage);
 popupWithImage.setEventListeners();
@@ -59,10 +51,12 @@ let userId;
 //загрузка данных о пользователе и карточек с сервера
 Promise.all([api.getUserInfo(), api.getInitialCards()])
   .then(([userData, cards]) => {
+    cards.reverse();
+    //console.log(cards);
     //console.log(userData);
     userInfo.setUserInfo(userData);
     userId = userData._id;
-    cardSection.renderItems(cards)
+   cardSection.renderItems(cards)
   })
   .catch(error => {
     console.log(error);
@@ -101,9 +95,8 @@ function createCard(data) {
       verificationCardPopup.submitCallback(() => {
         api.deleteCard(cardId)
           .then(() => {
-            setTimeout(() => {
             verificationCardPopup.close();
-            card.deleteCard();},1000);
+            card.deleteCard();
           })
           .catch((error) => {
             console.log(`Ошибка: ${error}`);
@@ -120,7 +113,7 @@ const popupFormAddCard = new PopupWithForm({
   popup:popupAddCardsForm,
   submitCallback:(formData) => {
     popupFormAddCard .toggleLoading(true);
-    api.getNewCard(formData)
+    api.setNewCard(formData)
       .then((formData) => {
         cardSection.addItem(createCard(formData));
         popupFormAddCard.close();
@@ -129,9 +122,7 @@ const popupFormAddCard = new PopupWithForm({
         console.log(`Ошибка: ${error}`);
       })
       .finally(() => {
-        setTimeout(() => {
           popupFormAddCard.toggleLoading(false);
-        }, 1000);
       });
   }
 });
@@ -152,9 +143,7 @@ const popupFormEditProfile = new PopupWithForm({
         console.log(`Ошибка: ${error}`);
       })
       .finally(() => {
-        setTimeout(() => {
           popupFormEditProfile.toggleLoading(false);
-        }, 1000);
       });
   }
 });
@@ -177,9 +166,7 @@ const popupFormEditAvatar = new PopupWithForm({
         console.log(`Ошибка: ${error}`);
       })
       .finally(() => {
-        setTimeout(() => {
           popupFormEditAvatar.toggleLoading(false);
-        }, 1000);
       });
   }
 });
