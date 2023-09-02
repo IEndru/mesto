@@ -40,6 +40,13 @@ export const addCardFormElement = popupAddCardsForm.querySelector('.popup__form_
 export const popupEditCardsForm = document.querySelector('.popup_type_profile-edit');
 export const editFormElement = popupEditCardsForm.querySelector('.popup__form_type_edit');
 
+export const popupEditAvatarForm = document.querySelector('.popup_type_edit-avatar');
+export const editAvatarFormElement = popupEditAvatarForm.querySelector('.popup__form_type_edit-avatar');
+export const editAvatarButtonElement = document.querySelector('.profile__avatar-editBtn');
+export const photoAvatar = document.querySelector('.profile__avatar');
+
+export const deleteCardsPopup = document.querySelector('.popup_type_delete-card');
+
 export const editButtonElement = document.querySelector('.profile__edit-button');
 export const closeButtonEditElement = document.querySelector('.popup__close-button_type_edit');
 export const popupElementEdit = document.querySelector('.popup_type_profile-edit');

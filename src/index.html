@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
 <main class="content">
   <section class="profile">
     <div class="profile__block">
-      <img src="<%=require('./images/avatar.svg')%>" class="profile__avatar" alt="Фото аватара">
+      <button class="profile__avatar-editBtn"><img src="<%=require('./images/avatar.svg')%>" class="profile__avatar" alt="Фото аватара"></button>
       <div class="profile__info">
         <h1 class="profile__title">Жак-Ив Кусто</h1>
         <button type="button" class="profile__edit-button"></button>
@@ -39,7 +39,7 @@
       <div class="popup__container">
         <button class="popup__close-button popup__close-button_type_edit" type="button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form popup__form_type_edit" action="#" name="editavatar" novalidate>
+        <form class="popup__form popup__form_type_edit" action="#" name="editAvatar" novalidate>
           <label>
             <input type="text"
                    class="popup__input popup__input_type_name"
@@ -57,7 +57,7 @@
                    class="popup__input popup__input_type_specialization"
                    minlength=2 maxlength=200
                    required
-                   name="job"
+                   name="about"
                    id="specialization-input"
                    value="Исследователь океана"
                    placeholder="Введите вашу специальность">
@@ -86,34 +86,64 @@
           </label>
           <label>
             <input type="url"
-                   id="urlplace-input"
+                   id="urlPlace-input"
                    class="popup__input popup__input_type_link"
                    name="link"
                    required
                    placeholder="Ссылка на картинку">
-            <span class="popup__input-error urlplace-input-error"></span>
+            <span class="popup__input-error urlPlace-input-error"></span>
           </label>
           <button type="submit" class="popup__submit">Создать</button>
         </form>
       </div>
     </section>
+    <section class="popup popup_type_edit-avatar">
+    <div class="popup__container">
+      <button class="popup__close-button popup__close-button_type_edit-avatar" type="button"></button>
+      <h2 class="popup__title">Обновить аватар</h2>
+      <form class="popup__form popup__form_type_edit-avatar" action="#" name="editAvatar" novalidate>
+        <label>
+          <input type="url"
+                 id="avatar-input"
+                 class="popup__input popup__input_type_link"
+                 name="avatar"
+                 required
+                 placeholder="Ссылка на фото аватара">
+          <span class="popup__input-error avatar-input-error"></span>
+        </label>
+        <button type="submit" class="popup__submit">Создать</button>
+      </form>
+    </div>
+    </section>
     <section class="popup popup_type_image popup_type_darker">
       <div class="popup__content">
-          <figure class="popup__image-wrap">
+        <figure class="popup__image-wrap">
             <img class="popup__image" src="<%=require('./images/noimage.jpg')%>" alt="нет картинки">
             <figcaption class="popup__image-caption"></figcaption>
             <button class="popup__close-button popup__close-button_type_full-image"></button>
-          </figure>
+        </figure>
       </div>
     </section>
-  </div>
+    <section class="popup popup_type_delete-card">
+      <div class="popup__container">
+        <button class="popup__close-button popup__close-button_type_delete-card" type="button"></button>
+        <h2 class="popup__title">Вы уверены?</h2>
+        <form class="popup__form popup__form_type_delete-card" action="#" name="deleteCard" novalidate>
+          <button type="submit" class="popup__submit">Да</button>
+        </form>
+      </div>
+    </section>
+</div>
     <template id="card-template">
       <div class="elements__card">
         <button class="elements__delete-button" type="button"></button>
         <img class="elements__img" src="<%=require('./images/noimage.jpg')%>" alt="нет картинки">
         <div class="elements__text">
           <h2 class="elements__title"></h2>
-          <button type="button" class="elements__heart link-transparency"></button>
+            <div class="elements__like-container">
+              <button type="button" class="elements__heart link-transparency"></button>
+              <span class="elements__likes-counter">0</span>
+            </div>
         </div>
       </div>
     </template>

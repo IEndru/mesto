@@ -1,12 +1,14 @@
 import Popup from "./Popup";
+import {profileAddButton} from "../utils/constants";
 
 export default class PopupWithForm extends Popup {
-  constructor(popup, submitCallback) {
+  constructor({popup, submitCallback}) {
     super(popup);
     this._submitCallback = submitCallback;
     this._formElement = this._popup.querySelector('.popup__form');
     this._inputList = this._formElement.querySelectorAll('.popup__input');
-    //console.log(this._inputList);
+    this._popupSubmitButton = this._formElement.querySelector('.popup__submit')
+    this._originalSubmitButtonText = this._popupSubmitButton.textContent;
   }
 
   _getInputValues() {
@@ -30,5 +32,16 @@ export default class PopupWithForm extends Popup {
     super.close();
     this._formElement.reset();
   }
+
+  toggleLoading(isLoading) {
+    if (isLoading) {
+      this._popupSubmitButton.textContent = 'Сохранение...';
+    }
+    else {
+      this._popupSubmitButton.textContent = this._originalSubmitButtonText;
+    }
+  }
+
+
 }
 
